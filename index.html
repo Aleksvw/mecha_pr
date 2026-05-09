@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>DriveTrust Auto · Tech Stack & Launch Roadmap</title>
+        <!-- Google Font & simple reset -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+          <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+        body {
+          background: #f6f8fc;
+            font-family: 'Inter', sans-serif;
+          color: #0a1c2f;
+            line-height: 1.45;
+          padding: 2rem 1.5rem;
+        }
+        .container {
+          max-width: 1280px;
+          margin: 0 auto;
+        }
+        /* header section */
+          .hero {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1a3a4f 100%);
+                                        border-radius: 2rem;
+                                        padding: 2rem 2rem 2rem 2.5rem;
+                                        margin-bottom: 2.2rem;
+                                        color: white;
+                                        box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+          }
+        .hero h1 {
+          font-size: 2.2rem;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          margin-bottom: 0.5rem;
+        }
+        .hero .badge {
+          background: rgba(255,255,255,0.15);
+          backdrop-filter: blur(4px);
+          display: inline-block;
+          padding: 0.25rem 1rem;
+          border-radius: 40px;
+          font-size: 0.75rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+        .hero p {
+          font-size: 1.05rem;
+          opacity: 0.9;
+          max-width: 80%;
+        }
+        .hero-note {
+          margin-top: 1.2rem;
+          font-size: 0.85rem;
+          background: rgba(0,0,0,0.25);
+          border-radius: 60px;
+          display: inline-block;
+          padding: 0.3rem 1rem;
+        }
+        /* card style */
+          .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f6;
+            transition: all 0.2s;
+          }
+        .card-header {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 1.2rem;
+          border-bottom: 2px solid #eef2f8;
+          padding-bottom: 0.7rem;
+        }
+        .card-header h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+        }
+        .icon-em {
+          font-size: 1.8rem;
+        }
+        .grid-2col {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+        .grid-3col {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+        .stack-item {
+          background: #f9fafc;
+            border-radius: 1.2rem;
+          padding: 1.2rem;
+          border-left: 3px solid #f97316;
+        }
+        .stack-item h3 {
+          font-weight: 700;
+          font-size: 1.2rem;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+        }
+        .price {
+          color: #f97316;
+            font-weight: 700;
+          background: #fff1e6;
+            padding: 0.2rem 0.6rem;
+          border-radius: 30px;
+          font-size: 0.8rem;
+        }
+        .pill {
+          background: #eef2ff;
+            color: #1e3a5f;
+            font-size: 0.7rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          display: inline-block;
+          margin-top: 0.6rem;
+        }
+        .phase {
+          background: #ffffff;
+            border-radius: 1.2rem;
+          padding: 1.3rem;
+          border: 1px solid #e2e8f0;
+          height: 100%;
+        }
+        .phase-title {
+          font-weight: 800;
+          font-size: 1.3rem;
+          border-left: 4px solid #f97316;
+          padding-left: 0.7rem;
+          margin-bottom: 1rem;
+        }
+        .cost-badge {
+          background: #ecfdf5;
+            color: #0b5e42;
+            padding: 0.2rem 1rem;
+          border-radius: 40px;
+          font-weight: 600;
+          font-size: 0.8rem;
+          width: fit-content;
+          margin: 0.6rem 0;
+        }
+        hr {
+          margin: 1rem 0;
+          border: 0;
+          height: 1px;
+          background: #e2edf2;
+        }
+        .footnote {
+          font-size: 0.8rem;
+          background: #f1f5f9;
+            padding: 1rem 1.6rem;
+          border-radius: 1rem;
+          color: #2c4e6e;
+            margin-top: 0.8rem;
+        }
+        .warning-note {
+          background: #fffbeb;
+            border-left: 4px solid #e67e22;
+          padding: 0.8rem 1.2rem;
+          border-radius: 1rem;
+          margin: 1rem 0;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.85rem;
+        }
+        th, td {
+          text-align: left;
+          padding: 0.7rem 0.3rem;
+          border-bottom: 1px solid #e2edf2;
+        }
+        th {
+          font-weight: 600;
+          color: #1e4663;
+        }
+        .img-example {
+          width: 100%;
+          border-radius: 1rem;
+          margin-top: 0.75rem;
+          border: 1px solid #e2edf2;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .inline-img-caption {
+          font-size: 0.7rem;
+          color: #4b6b8f;
+            text-align: center;
+          margin-top: 0.3rem;
+        }
+        @media (max-width: 780px) {
+          .grid-2col, .grid-3col { grid-template-columns: 1fr; }
+          .hero p { max-width: 100%; }
+          body { padding: 1.2rem; }
+        }
+        .badge-orange {
+          background: #f9731610;
+            color: #c2410c;
+            border-radius: 40px;
+          padding: 0.1rem 0.6rem;
+          font-size: 0.7rem;
+          font-weight: 500;
+        }
+        </style>
+          </head>
+          <body>
+          <div class="container">
+          <!-- Hero: executive summary -->
+          <div class="hero">
+          <div class="badge">📋 Operations blueprint · May 2026</div>
+          <h1>DriveTrust Auto · Full tech stack<br>from solo mechanic to scalable fleet</h1>
+          <p>Retainer‑based auto service · “one call, peace of mind” — powered by Zoho CRM + Mapsly + automated dispatch. <br> This document shows exact tools, monthly costs, and a phased launch plan.</p>
+          <div class="hero-note">📌 Starting retainer: <strong>$50/month</strong> · Target by month 6: <strong>100 customers</strong></div>
+          </div>
+          
+          <!-- 1. WHY BOTH ?  explanation card -->
+          <div class="card">
+          <div class="card-header">
+          <span class="icon-em">🗺️🧠</span>
+          <h2>Why Mapsly + Zoho CRM? (not just one or the other)</h2>
+          </div>
+          <div class="grid-2col">
+          <div class="stack-item" style="border-left-color:#f97316">
+          <h3>📍 Mapsly <span class="price">geospatial layer</span></h3>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem; color: #2c3e4e;">
+          <li>Isochrones / isocircles → show service area on website</li>
+          <li>Multi‑user routing & territory drawing</li>
+          <li>Auto‑match closest available technician</li>
+          <li>Travel‑aware calendar & check‑in/out</li>
+          <li>Real‑time location tracking for independent contractors</li>
+          </ul>
+          <div class="pill">✓ must‑have for dispatching 2+ contractors</div>
+          <!-- isochrone example image from Mapsly -->
+          <img class="img-example" src="https://downloads.intercomcdn.com/i/o/479552309/d9c8925f2df49682aabb1a96/image.png" alt="Mapsly isochrone example: time-based service area">
+          <div class="inline-img-caption">Isochrones: show drive‑time polygons, set realistic ETAs + territories</div>
+          </div>
+          <div class="stack-item" style="border-left-color:#1e6f5c">
+          <h3>📇 Zoho CRM <span class="price">customer brain</span></h3>
+          <ul style="margin-left: 1.2rem; margin-top: 0.4rem; color: #2c3e4e;">
+          <li>Full service history, interaction log, notes</li>
+          <li>Territory management (Enterprise tier)</li>
+          <li>Lead pipeline (website form → qualified → retainer)</li>
+          <li>Automated 3‑month reminders & follow‑ups</li>
+          <li>Customer portal & advanced permissions</li>
+          </ul>
+          <div class="pill">✓ trust, retention & scalability</div>
+          <!-- Zoho CRM dashboard example -->
+          <img class="img-example" src="https://blog.zohowebstatic.com/sites/zblogs/images/crm/post1_dashboard-2018-08.jpg" alt="Zoho CRM dashboard showing analytics and pipeline">
+          <div class="inline-img-caption">Zoho dashboard: retention metrics, retainer health, service history</div>
+          </div>
+          </div>
+          <div class="warning-note">
+          <strong>⚡ Integration fact:</strong> Mapsly natively syncs bi‑directionally with Zoho CRM (real‑time). Territories drawn in Mapsly reflect back to Zoho records. They're designed to work together — not an overlap but a force multiplier.
+        </div>
+    </div>
+
+    <!-- 2. FULL STACK BREAKDOWN (cost table) -->
+    <div class="card">
+        <div class="card-header">
+            <span class="icon-em">💰</span>
+            <h2>Digital tech stack · monthly operational cost</h2>
+        </div>
+        <table>
+            <thead>
+                <tr><th>Component</th><th>Plan / tier (launch config)</th><th>Monthly cost</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>🌐 Web hosting</td><td>Shared static (GitHub Pages compatible)</td><td>$5–10</td><td>HTML/CSS site + booking form</td></tr>
+                <tr><td>🗺️ Mapsly</td><td>Essential (3 users: owner + 2 contractors)</td><td>$75</td><td>Routing, isochrones, live tracking</td></tr>
+                <tr><td>📇 Zoho CRM</td><td>Enterprise (owner) + Standard (2 contractors)</td><td>$92</td><td>Territory mgmt + core automation</td></tr>
+                <tr><td>📒 Zoho Books</td><td>Free plan</td><td>$0</td><td>Upgrade to Standard ($15) later if needed</td></tr>
+                <tr><td>✉️ Zoho Campaigns</td><td>Basic (up to 2k contacts)</td><td>$5</td><td>3‑month reminders, confirmations</td></tr>
+                <tr><td>💳 Stripe</td><td>Subscription + standard fees</td><td>~5.5% of revenue*</td><td>includes Billing & Tax if needed</td></tr>
+                <tr><td>📢 Google Ads</td><td>Learning / brand awareness</td><td>$250</td><td>keyword testing, CPA learning</td></tr>
+            </tbody>
+        </table>
+        <div class="footnote">
+            ✅ <strong>Fixed monthly software (excluding ads & Stripe):</strong> ~$172 – $182 (hosting + Mapsly + Zoho CRM + Campaigns). <br>
+            ✅ <strong>Full operational budget (including ads & variable):</strong> ~$427 + 5.5% of retainer revenue.
+        </div>
+    </div>
+
+    <!-- 3. PHASED LAUNCH PLAN (MVP → full ops → scaling) -->
+    <div class="card">
+        <div class="card-header">
+            <span class="icon-em">🚀</span>
+            <h2>Phased roadmap · from day one to 100 customers</h2>
+        </div>
+        <div class="grid-3col">
+            <div class="phase">
+                <div class="phase-title">Phase 1 · MVP</div>
+                <div class="cost-badge">~$175–195/mo + stripe fees</div>
+                <ul style="margin-left: 1rem; margin-top: 0.75rem;">
+                    <li>✅ Website + booking form</li>
+                    <li>✅ Mapsly Essential (single‑user routing) → owner only</li>
+                    <li>✅ Zoho CRM Standard (basic workflows)</li>
+                    <li>✅ Zoho Books Free</li>
+                    <li>✅ Manual territory assignment (no automation yet)</li>
+                    <li>🎯 Goal: prove retainer model, keep overhead lean</li>
+                </ul>
+                <div class="pill">Months 1–2 · validate operations</div>
+            </div>
+            <div class="phase">
+                <div class="phase-title">Phase 2 · Full ops</div>
+                <div class="cost-badge">~$425/mo + ads + stripe</div>
+                <ul style="margin-left: 1rem; margin-top: 0.75rem;">
+                    <li>✅ Upgrade Zoho CRM → Enterprise (territories + AI)</li>
+                    <li>✅ Mapsly Pro (multi‑user routing, auto‑match technicians)</li>
+                    <li>✅ Onboard 2 independent contractors with territories</li>
+                    <li>✅ Zoho Campaigns → automated 3‑month reminders / satisfaction</li>
+                    <li>✅ Google Ads $250 (brand + “Tulsa auto retainer”)</li>
+                    <li>📈 Target: <strong>50 customers by month 3–4</strong></li>
+                </ul>
+                <div class="pill">Months 3–5 · scale with trust & efficiency</div>
+            </div>
+            <div class="phase">
+                <div class="phase-title">Phase 3 · Scaling</div>
+                <div class="cost-badge">pay‑as‑you‑grow</div>
+                <ul style="margin-left: 1rem; margin-top: 0.75rem;">
+                    <li>➕ Add more contractor licenses (Mapsly + Zoho seats)</li>
+                    <li>➕ Zoho Analytics (advanced dashboards)</li>
+                    <li>➕ Expand ad spend based on CPA</li>
+                    <li>➕ Referral program + territory expansion</li>
+                    <li>🎯 <strong>100 customers by month 6</strong> ( $5k MRR )</li>
+                </ul>
+                <div class="pill">6–12 months · replicable, scalable model</div>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top: 1rem;">
+            <p><strong>🔁 Why start with both in phase 2? </strong> The moment you add a second independent contractor, territory conflicts, route inefficiencies, and customer ownership confusion appear. Mapsly (Pro) + Zoho Enterprise eliminate that friction. Phase 1 can be lightweight, but phase 2 must include both to protect the brand promise “one call, no nonsense”.</p>
+        </div>
+    </div>
+
+    <!-- 4. Overlap vs unique value (quick matrix) -->
+    <div class="card">
+        <div class="card-header"><span class="icon-em">⚖️</span><h2>Overlap & unique strengths (Mapsly vs Zoho)</h2></div>
+        <div class="grid-2col">
+            <div>
+                <h3 style="font-weight:700">🟠 Mapsly exclusives</h3>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Isochrones / drive‑time polygons for website map</li>
+                    <li>Multi‑stop, multi‑day optimized routing</li>
+                    <li>“Closest available tech” auto‑assignment</li>
+                    <li>Draw & assign visual territories on map</li>
+                    <li>Live location tracking + check‑in/check‑out</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="font-weight:700">🔵 Zoho CRM exclusives</h3>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Full customer timeline & service history</li>
+                    <li>Automated reminder campaigns (3‑month oil & inspection)</li>
+                    <li>Lead to retainer pipeline + deal tracking</li>
+                    <li>Invoicing (Zoho Books integration)</li>
+                    <li>Granular user permissions for contractors</li>
+                    <li>Reporting / retention analytics</li>
+                </ul>
+            </div>
+        </div>
+        <div style="background: #fef9e6; border-radius: 1rem; padding: 0.7rem 1rem; margin-top: 1rem;">
+            📌 <strong>Verdict:</strong> they complement each other — Zoho = customer truth, Mapsly = field execution machine. Running only Mapsly means losing automated customer nurturing & retention; running only Zoho means losing routing/territory automation. For independent contractor model, both are justified.
+        </div>
+    </div>
+
+    <!-- 5. All-in numerical summary for presentation to friend -->
+    <div class="card">
+        <div class="card-header"><span class="icon-em">📊</span><h2>Year‑1 projection (starting retainer: $50/mo)</h2></div>
+        <table>
+            <tr><th>Metric</th><th>Amount / notes</th></tr>
+            <tr><td>Monthly retainer (starting)</td><td><strong>$50/month</strong> per customer</td></tr>
+            <tr><td>Customers by month 6 target</td><td>100 customers → $5,000 MRR</td></tr>
+            <tr><td>Monthly recurring revenue (MRR) at scale</td><td>$3k – $5k (phase 2 to phase 3)</td></tr>
+            <tr><td>Software + ads fixed monthly (phase 2)</td><td>~$427</td></tr>
+            <tr><td>Stripe fees (5.5% of MRR)</td><td>$165 – $275</td></tr>
+            <tr><td>Total operating costs (phase 2)</td><td>$592 – $702 / month</td></tr>
+            <tr><td>Net profit before legal/insurance*</td><td>$2,400 – $4,300+</td></tr>
+        </table>
+        <div class="warning-note">
+            <strong>⚠️ Asterisk items (excluded from tech stack):</strong> business formation/licensing, accountant/tax filing, liability insurance, auto insurance for independent contractors (they carry their own), domain registration (~$15/yr). We already have contacts for these, so treat separately.
+        </div>
+    </div>
+
+    <!-- 6. Recommendations: Which plan for mapsly & zoho tier -->
+    <div class="card">
+        <div class="card-header"><span class="icon-em">🎯</span><h2>Recommended launch configuration (scalable from day 1)</h2></div>
+        <div class="grid-2col">
+            <div class="stack-item">
+                <h3>🗺️ Mapsly Pro</h3>
+                <div><span class="price">$45/user/mo · annual billing</span></div>
+                <p style="margin-top: 0.5rem;">Multi‑user/day routing, territory auto‑assignment, up to 1000 stops/route, no‑code automation. Essential once you bring >=2 techs (phase 2).</p>
+                <div class="pill">Alternative: Essential ($25) for solo phase, upgrade later</div>
+            </div>
+            <div class="stack-item">
+                <h3>📇 Zoho CRM Enterprise</h3>
+                <div><span class="price">$52/user/mo · owner only</span></div>
+                <p style="margin-top: 0.5rem;">Territory management, Zia AI (churn prediction), blueprint automation, anomaly detection. Contractors use Standard tier ($20). Total ~$92/mo for 3 users.</p>
+                <div class="pill">Critical for independent contractor fairness & brand consistency</div>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top: 1rem;">
+            <p><strong>🧑‍💼 Practical note:</strong> Each extra technician costs roughly $45 (Mapsly) + $20 (Zoho Standard) = $65/month. With a $50/month retainer, one additional retainer client covers the software cost for that tech. The rest is profit while scaling the brand promise.</p>
+        </div>
+    </div>
+
+    <!-- 7. "Why retainer is not about oil changes" message -->
+    <div class="card" style="background: linear-gradient(115deg, #fff8f0 0%, #ffffff 100%);">
+        <div class="card-header">
+            <span class="icon-em">💡</span>
+            <h2>Strategic core: The real product is certainty</h2>
+        </div>
+        <p style="font-size: 1rem; margin-bottom: 0.6rem;">Oil changes are a commodity. The retainer sells:<br>
+        “I never have to think about maintenance”, “One person to call when it makes a funny sound”, “I won’t get ripped off”.</p>
+        <p>That promise demands flawless backend orchestration: automated reminders, transparent dispatching, territory fairness, and invoicing that matches expectations. Zoho + Mapsly together make that invisible magic work at scale.</p>
+        <div class="footnote" style="margin-top: 0.8rem;">✅ Every additional retainer client covers the software cost for a new contractor after the first month. Efficiency drives growth and protects the brand.</div>
+    </div>
+
+    <!-- 8. simple comparison cards for decision -->
+    <div class="card">
+        <div class="card-header"><span class="icon-em">🤝</span><h2>Decision helper: which path to choose?</h2></div>
+        <div class="grid-2col">
+            <div class="phase">
+                <div class="phase-title" style="font-size:1.1rem;">🇦 Option A · Both from day 1</div>
+                <p><strong>✅ Best for scalability & training new hires</strong> — workflows are built correctly from the start, no process migration, contractors get used to territory rules immediately. Recommended to reach 100 customers by month 6.</p>
+                <div class="cost-badge">~$427/mo + 5.5% stripe</div>
+            </div>
+            <div class="phase">
+                <div class="phase-title" style="font-size:1.1rem;">🇧 Option B · Mapsly only (no Zoho)</div>
+                <p><strong>⚠️ Missing customer nurturing</strong> — no automated 3‑month reminders, no pipeline for lead-to-retainer, no deep service history. Works for dispatching but risks losing “one point of contact” brand promise. Could be temporary for 2 months.</p>
+                <div class="cost-badge">~$80–120/mo + Stripe</div>
+            </div>
+        </div>
+        <div style="margin-top: 1rem; background: #eaf3fa; border-radius: 1rem; padding: 0.6rem 1rem;">
+            🚀 Founder insight: “You don’t need to be a 100‑person shop to act like one. The back office stack costs less than three retainer clients. Every seamless interaction creates word‑of‑mouth that money can't buy.”
+        </div>
+          </div>
+          
+          <!-- final footer simplified -->
+          <div class="footnote" style="text-align: center; background: transparent; border: 1px solid #dce5ec; margin-top: 1rem;">
+          DriveTrust Auto — tech stack overview v1.0
+        </div>
+          </div>
+          </body>
+          </html>

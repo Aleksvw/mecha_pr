@@ -195,18 +195,23 @@
             text-align: center;
             margin-top: 0.3rem;
         }
-        .financial-table {
-            margin: 1rem 0;
+        .phase-table {
+            margin: 1rem 0 0.5rem 0;
         }
-        .financial-table table {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid #e9eef2;
+        .phase-table table {
+            background: #fafcff;
+            border-radius: 0.8rem;
+            border: 1px solid #e6edf4;
         }
-        .financial-table th {
-            background: #f8fafc;
-            font-weight: 600;
+        .phase-table th {
+            background: #f2f6fc;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .price-highlight {
+            font-weight: 800;
+            color: #f97316;
+            font-size: 1rem;
         }
         @media (max-width: 780px) {
             .grid-2col, .grid-3col { grid-template-columns: 1fr; }
@@ -228,7 +233,6 @@
     <!-- 1. Why Mapsly + Zoho CRM together -->
     <div class="card">
         <div class="card-header">
-            <span class="icon-em">🗺️🧠</span>
             <h2>Why Mapsly + Zoho CRM? (not just one or the other)</h2>
         </div>
         <div class="grid-2col">
@@ -264,77 +268,79 @@
         </div>
     </div>
 
-    <!-- 2. Full stack breakdown: monthly software cost (table) -->
+    <!-- 2. Phased launch plan with per-phase pricing tables -->
     <div class="card">
         <div class="card-header">
-            <span class="icon-em">💰</span>
-            <h2>Digital tech stack · monthly software cost (full Phase 2 config)</h2>
-        </div>
-        <div class="financial-table">
-            <table>
-                <thead>
-                    <tr><th>Component</th><th>Plan / tier</th><th>Monthly cost</th><th>Notes</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Web hosting (Bluehost)</td><td>Shared starter (static + backend ready)</td><td>$5.99 – $7.99</td><td>Full control, PHP/MySQL if needed later</td></tr>
-                    <tr><td>Mapsly</td><td>Essential (1 user) or Pro (3 users)</td><td>$25 – $135</td><td>$25/user Essential; $45/user Pro</td></tr>
-                    <tr><td>Zoho CRM</td><td>Enterprise (owner) + Standard (up to 2 contractors)</td><td>$52 – $92</td><td>$52 Enterprise; $20 Standard per contractor</td></tr>
-                    <tr><td>Zoho Books</td><td>Free plan</td><td>$0</td><td>Upgrade to Standard ($15) later if needed</td></tr>
-                    <tr><td>Zoho Campaigns</td><td>Basic (up to 2k contacts)</td><td>$5</td><td>3-month reminders, confirmations</td></tr>
-                    <tr><td>Google Ads</td><td>Learning / brand awareness</td><td>$250</td><td>Keyword testing, CPA learning; optional, adjust as needed</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="footnote">
-            <strong>Fixed monthly software (excluding Google Ads):</strong> $82.99 – $239.99 depending on phase and user count.<br>
-            <strong>With Google Ads (optional):</strong> add $250. Ads budget is discretionary and not required for the stack to function.
-        </div>
-    </div>
-
-    <!-- 3. Phased launch plan -->
-    <div class="card">
-        <div class="card-header">
-            <span class="icon-em">🚀</span>
             <h2>Phased roadmap · software adoption by stage</h2>
         </div>
         <div class="grid-3col">
             <div class="phase">
                 <div class="phase-title">Phase 1 · MVP</div>
-                <div class="cost-badge">~$53/mo software</div>
+                <div class="cost-badge">Software total: $50.99 / month</div>
+                <div class="phase-table">
+                    <table>
+                        <thead>
+                            <tr><th>Component</th><th>Plan</th><th>Monthly</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Web hosting (Bluehost)</td><td>Shared starter</td><td>$5.99</td></tr>
+                            <tr><td>Mapsly</td><td>Essential (1 user, owner)</td><td>$25.00</td></tr>
+                            <tr><td>Zoho CRM</td><td>Standard (owner only)</td><td>$20.00</td></tr>
+                            <tr><td>Zoho Books</td><td>Free</td><td>$0.00</td></tr>
+                            <tr><td>Zoho Campaigns</td><td>Basic</td><td>$5.00</td></tr>
+                            <tr><td>Google Ads</td><td>Not running</td><td>$0.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <ul style="margin-left: 1rem; margin-top: 0.75rem;">
-                    <li>Bluehost shared hosting: ~$6</li>
-                    <li>Mapsly Essential (1 user, owner only): $25</li>
-                    <li>Zoho CRM Standard (owner only): $20</li>
-                    <li>Zoho Books Free: $0</li>
-                    <li>Zoho Campaigns Basic: $5</li>
-                    <li>Manual territory assignment (no automation yet)</li>
-                    <li>Goal: prove retainer model, keep overhead lean</li>
+                    <li>Manual territory assignment (no auto-routing)</li>
+                    <li>Owner handles dispatching manually</li>
+                    <li>Goal: prove retainer model, keep overhead minimal</li>
                 </ul>
                 <div class="pill">Months 1–2 · validate operations</div>
             </div>
+
             <div class="phase">
                 <div class="phase-title">Phase 2 · Full ops</div>
-                <div class="cost-badge">~$239/mo software + ads</div>
+                <div class="cost-badge">Software total: $239.99 / month</div>
+                <div class="phase-table">
+                    <table>
+                        <thead><tr><th>Component</th><th>Plan</th><th>Monthly</th></tr></thead>
+                        <tbody>
+                            <tr><td>Web hosting (Bluehost)</td><td>Shared starter</td><td>$7.99</td></tr>
+                            <tr><td>Mapsly</td><td>Pro (3 users: owner + 2 contractors)</td><td>$135.00</td></tr>
+                            <tr><td>Zoho CRM</td><td>Enterprise (owner) + Standard (2 contractors)</td><td>$92.00</td></tr>
+                            <tr><td>Zoho Books</td><td>Free</td><td>$0.00</td></tr>
+                            <tr><td>Zoho Campaigns</td><td>Basic</td><td>$5.00</td></tr>
+                            <tr><td>Google Ads</td><td>Optional learning budget</td><td>$0 (add $250 if desired)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <ul style="margin-left: 1rem; margin-top: 0.75rem;">
-                    <li>Bluehost shared hosting: ~$7</li>
-                    <li>Mapsly Pro (3 users: owner + 2 contractors): $135</li>
-                    <li>Zoho CRM Enterprise (owner): $52</li>
-                    <li>Zoho CRM Standard (2 contractors): $40</li>
-                    <li>Zoho Books Free: $0</li>
-                    <li>Zoho Campaigns Basic: $5</li>
-                    <li>Google Ads (optional): $250</li>
-                    <li>Full territory management, auto-dispatch, automated reminders</li>
+                    <li>Full territory management</li>
+                    <li>Auto-dispatch & closest technician matching</li>
+                    <li>Automated 3‑month reminders & follow-ups</li>
+                    <li>Multi-contractor ready (owner + 2 techs)</li>
                 </ul>
-                <div class="pill">Months 3–5 · multi-contractor ready</div>
+                <div class="pill">Months 3–5 · multi-contractor operations</div>
             </div>
+
             <div class="phase">
                 <div class="phase-title">Phase 3 · Scaling</div>
-                <div class="cost-badge">pay-as-you-grow</div>
+                <div class="cost-badge">Software cost: $65 / month per additional contractor</div>
+                <div class="phase-table">
+                    <table>
+                        <thead><tr><th>Component</th><th>Incremental cost</th></tr></thead>
+                        <tbody>
+                            <tr><td>Mapsly Pro (additional seat)</td><td>$45.00</td></tr>
+                            <tr><td>Zoho CRM Standard (additional contractor)</td><td>$20.00</td></tr>
+                            <tr><td><strong>Total per extra technician</strong></td><td><strong>$65.00 / month</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <ul style="margin-left: 1rem; margin-top: 0.75rem;">
-                    <li>Add more contractor licenses as needed</li>
-                    <li>Mapsly: $45 per additional contractor/mo</li>
-                    <li>Zoho CRM Standard: $20 per additional contractor/mo</li>
-                    <li>Zoho Analytics (optional advanced dashboards)</li>
+                    <li>Add contractor licenses one by one</li>
+                    <li>Zoho Analytics (optional advanced reporting)</li>
                     <li>Expand ad spend based on CPA data</li>
                     <li>Referral program + territory expansion</li>
                 </ul>
@@ -344,13 +350,13 @@
         <hr>
         <div style="margin-top: 1rem;">
             <p><strong>Why upgrade to both in Phase 2?</strong> The moment you add a second independent contractor, territory conflicts, route inefficiencies, and customer ownership confusion appear. Mapsly Pro + Zoho Enterprise eliminate that friction. Phase 1 can be lightweight, but Phase 2 must include both to protect the brand promise — "one call, no nonsense."</p>
-            <p style="margin-top: 0.5rem;"><strong>Per-contractor software cost to add:</strong> $45 (Mapsly Pro) + $20 (Zoho CRM Standard) = <strong>$65/month</strong> for each additional technician beyond the owner.</p>
+            <p style="margin-top: 0.75rem; background: #f0f5fa; padding: 0.5rem 0.75rem; border-radius: 0.75rem;"><strong>Per-contractor software cost:</strong> $45 (Mapsly Pro) + $20 (Zoho CRM Standard) = <strong class="price-highlight">$65/month</strong> for each additional technician beyond the owner. Predictable, transparent, and scales with your team.</p>
         </div>
     </div>
 
-    <!-- 4. Overlap vs unique value matrix -->
+    <!-- 3. Overlap vs unique value matrix -->
     <div class="card">
-        <div class="card-header"><span class="icon-em">⚖️</span><h2>Overlap & unique strengths (Mapsly vs Zoho)</h2></div>
+        <div class="card-header"><h2>Overlap & unique strengths (Mapsly vs Zoho)</h2></div>
         <div class="grid-2col">
             <div>
                 <h3 style="font-weight:700">Mapsly exclusives</h3>
@@ -379,33 +385,31 @@
         </div>
     </div>
 
-    <!-- 5. Recommended configuration: Mapsly Pro + Zoho Enterprise -->
+    <!-- 4. Recommended configuration summary -->
     <div class="card">
-        <div class="card-header"><span class="icon-em">🎯</span><h2>Recommended Phase 2 configuration (multi-contractor ready)</h2></div>
+        <div class="card-header"><h2>Recommended Phase 2 configuration (multi-contractor ready)</h2></div>
         <div class="grid-2col">
             <div class="stack-item">
                 <h3>Mapsly Pro</h3>
-                <div><span class="price">$45/user/month</span></div>
+                <div><span class="price">$45/user/month · annual billing</span></div>
                 <p style="margin-top: 0.5rem;">Multi-user/day routing, territory auto-assignment, up to 1,000 stops/route, no-code automation. Essential once you bring on 2+ technicians.</p>
                 <div class="pill">Phase 1 alternative: Essential ($25) for solo phase</div>
             </div>
             <div class="stack-item">
-                <h3>Zoho CRM Enterprise</h3>
-                <div><span class="price">$52/month (owner only)</span></div>
-                <p style="margin-top: 0.5rem;">Territory management, Zia AI (churn prediction), blueprint automation, anomaly detection. Contractors use Standard tier ($20 each).</p>
+                <h3>Zoho CRM Enterprise + Standard</h3>
+                <div><span class="price">$52 (owner) + $20 per contractor</span></div>
+                <p style="margin-top: 0.5rem;">Territory management, Zia AI (churn prediction), blueprint automation, anomaly detection for owner. Contractors use Standard tier for job assignments and customer view.</p>
                 <div class="pill">Critical for independent contractor fairness & brand consistency</div>
             </div>
         </div>
-        <hr>
-        <div style="margin-top: 1rem;">
-            <p><strong>Phase 2 total software cost (3 users, no ads):</strong> ~$239/month for a fully operational multi-controller stack with territory management, automated dispatch, and customer retention workflows. Add $250/month for Google Ads if running paid acquisition.</p>
+        <div class="footnote" style="margin-top: 1rem;">
+            <strong>Phase 2 base software cost (owner + 2 contractors, no ads):</strong> $239.99/month. Add $250/month for Google Ads if running paid acquisition. This gives you a fully operational multi-contractor stack with territory management, automated dispatch, and customer retention workflows.
         </div>
     </div>
 
-    <!-- 6. Strategic core: retainer is about certainty, not oil changes -->
+    <!-- 5. Strategic core: retainer is about certainty, not oil changes -->
     <div class="card" style="background: linear-gradient(115deg, #fff8f0 0%, #ffffff 100%);">
         <div class="card-header">
-            <span class="icon-em">💡</span>
             <h2>Strategic core: The real product is certainty</h2>
         </div>
         <p style="font-size: 1rem; margin-bottom: 0.6rem;">Oil changes are a commodity. The retainer sells:<br>
